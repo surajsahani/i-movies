@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Itunes Movie App</string>
-    <string name="itunes_movies">iTunes Movies</string>
+    <string name="app_name">i-movies</string>
+    <string name="itunes_movies">i-movies</string>
     <string name="search">Search</string>
 </resources>
