@@ -45,10 +45,10 @@ abstract class ItunesMovieCache : RoomDatabase() {
          * we do not need to recreate a new instance everytime we
          * need it!
          */
-        val database = Room.databaseBuilder(
-            AppApplication.globalContext,
-            ItunesMovieCache::class.java,
-            DATABASE_NAME
-        ).build()
+//        val database = Room.databaseBuilder(
+//            AppApplication.globalContext,
+//            ItunesMovieCache::class.java,
+//            DATABASE_NAME
+//        ).build()
     }
 }

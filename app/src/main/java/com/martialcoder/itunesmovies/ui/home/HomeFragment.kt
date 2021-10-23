@@ -41,10 +41,10 @@ class HomeFragment : Fragment() {
         val activity = activity as MainActivity
         val viewModel = activity.homeViewModel
 
-        val watchedMoviesAdapter = WatchedMovieAdapter(viewModel)
+//        val watchedMoviesAdapter = WatchedMovieAdapter(viewModel)
         val searchedMoviesAdapter = SearchedMoviesAdapter(viewModel)
         binder.watchedMovies.apply {
-            adapter = watchedMoviesAdapter
+//            adapter = watchedMoviesAdapter
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         }
         binder.searchedMovies.apply {
@@ -53,29 +53,29 @@ class HomeFragment : Fragment() {
         }
 
         viewModel.search("star")
-        viewModel.watchedMovies.observe(this, Observer {
-            if (it.isEmpty()) {
-                binder.recentLabel.visibility = View.GONE
-                binder.watchedMovies.visibility = View.GONE
-            } else {
-                binder.recentLabel.visibility = View.VISIBLE
-                binder.watchedMovies.visibility = View.VISIBLE
-            }
-
-            watchedMoviesAdapter.movies = it
-        })
-        viewModel.searchedMovies.observe(this, Observer {
-            viewModel.setCount(it.size)
-            searchedMoviesAdapter.submitList(it)
-        })
-
-        binder.searchBox.setOnEditorActionListener { _, actionId, _ ->
-            val keyword = binder.searchBox.text.toString()
-            if (actionId == EditorInfo.IME_ACTION_DONE && keyword.isNotEmpty()) {
-                viewModel.search(keyword)
-                true
-            }
-            false
-        }
+//        viewModel.watchedMovies.observe(this, Observer {
+//            if (it.isEmpty()) {
+//                binder.recentLabel.visibility = View.GONE
+//                binder.watchedMovies.visibility = View.GONE
+//            } else {
+//                binder.recentLabel.visibility = View.VISIBLE
+//                binder.watchedMovies.visibility = View.VISIBLE
+//            }
+//
+//            watchedMoviesAdapter.movies = it
+//        })
+//        viewModel.searchedMovies.observe(this, Observer {
+//            viewModel.setCount(it.size)
+//            searchedMoviesAdapter.submitList(it)
+//        })
+//
+//        binder.searchBox.setOnEditorActionListener { _, actionId, _ ->
+//            val keyword = binder.searchBox.text.toString()
+//            if (actionId == EditorInfo.IME_ACTION_DONE && keyword.isNotEmpty()) {
+//                viewModel.search(keyword)
+//                true
+//            }
+//            false
+//        }
     }
 }

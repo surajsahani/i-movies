@@ -12,17 +12,17 @@ class HomeViewModel : ViewModel() {
     private val search = MutableLiveData<String>()
     private val selectedMovie = MutableLiveData<String>()
 
-    private val searchBundle = Transformations.map(search) {
-        if (it.isEmpty()) {
-            repository.getMovies("star")
-        } else {
-            repository.getMovies(it)
-        }
-    }
+//    private val searchBundle = Transformations.map(search) {
+//        if (it.isEmpty()) {
+//            repository.getMovies("star")
+//        } else {
+//            repository.getMovies(it)
+//        }
+//    }
 
-    val searchedMovies = Transformations.switchMap(searchBundle) { it.boundary }
-    val watchedMovies = repository.getWatchHistory()
-    val viewedMovie = Transformations.switchMap(selectedMovie) { repository.getMovie(it) }
+//    val searchedMovies = Transformations.switchMap(searchBundle) { it.boundary }
+//    val watchedMovies = repository.getWatchHistory()
+//    val viewedMovie = Transformations.switchMap(selectedMovie) { repository.getMovie(it) }
 
     private val _openFragment = SingleLiveEvent<Void>()
     val openFragment: LiveData<Void>
@@ -40,6 +40,6 @@ class HomeViewModel : ViewModel() {
     }
 
     fun setCount(count: Int) {
-        searchBundle.value?.itemCount?.invoke(count)
+//        searchBundle.value?.itemCount?.invoke(count)
     }
 }

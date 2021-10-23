@@ -8,6 +8,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.martialcoder.itunesmovies.source.cache.MovieEntity
 import com.martialcoder.itunesmovies.source.cache.SearchResultsEntity
+import java.util.*
 
 /**
  * Manage the Read and Write query for our Movies.
@@ -25,8 +26,8 @@ abstract class MovieDao {
      * Insert each movie not unless it does exist already.
      * This INSERT runs inside a db Transaction!
      */
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    abstract fun insertMovies(movies: List<MovieEntity>)
+//    @Insert(onConflict = OnConflictStrategy.IGNORE)
+//    abstract fun insertMovies(movies: List<MovieEntity>)
 
     /**
      * Map the movie searches to a search keyword.
