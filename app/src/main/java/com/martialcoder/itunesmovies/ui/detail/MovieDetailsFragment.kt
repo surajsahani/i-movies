@@ -38,32 +38,32 @@ class MovieDetailsFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         val activity = activity as MainActivity
         val viewModel = activity.homeViewModel
-//        viewModel.viewedMovie.observe(this, Observer { entity ->
-//            if (entity != null) {
-//                binder.apply {
-//                    movieTitle.text = entity.name
-//                    movieDesc.text = entity.longDesc
-//                    moviePrice.text = entity.price.toCurrency(entity.currency)
-//                    movieActor.text = entity.actor
-//                    movieGenre.text = entity.genre
-//                    Picasso.get()
-//                        .load(entity.image)
-//                        .centerCrop()
-//                        .fit()
-//                        .into(movieImage)
-//
-//                    playVideo.setOnClickListener {
-//                        if (entity.preview != null) {
-//                            val intent = Intent(Intent.ACTION_VIEW)
-//                            intent.setDataAndType(entity.preview, "video/*")
-//                            startActivity(intent)
-//                        }
-//                    }
-//
-//                    movieTitle.paint
-//                }
-//            }
-//        })
+        viewModel.viewedMovie.observe(this, Observer { entity ->
+            if (entity != null) {
+                binder.apply {
+                    movieTitle.text = entity.name
+                    movieDesc.text = entity.longDesc
+                    moviePrice.text = entity.price.toCurrency(entity.currency)
+                    movieActor.text = entity.actor
+                    movieGenre.text = entity.genre
+                    Picasso.get()
+                        .load(entity.image)
+                        .centerCrop()
+                        .fit()
+                        .into(movieImage)
+
+                    playVideo.setOnClickListener {
+                        if (entity.preview != null) {
+                            val intent = Intent(Intent.ACTION_VIEW)
+                            intent.setDataAndType(entity.preview, "video/*")
+                            startActivity(intent)
+                        }
+                    }
+
+                    movieTitle.paint
+                }
+            }
+        })
     }
 
 }
