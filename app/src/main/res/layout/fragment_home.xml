@@ -25,15 +25,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                <ImageView
-                        android:layout_marginRight="@dimen/apple_icon_right_margin"
-                        android:src="@drawable/ic_apple"
-                        android:layout_width="@dimen/apple_icon_size"
-                        android:layout_height="@dimen/apple_icon_size"
-                        app:layout_constraintEnd_toStartOf="@+id/movie_title"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:layout_marginEnd="@dimen/apple_icon_right_margin"/>
+<!--                <ImageView-->
+<!--                        android:layout_marginRight="@dimen/apple_icon_right_margin"-->
+<!--                        android:src="@drawable/ic_apple"-->
+<!--                        android:layout_width="@dimen/apple_icon_size"-->
+<!--                        android:layout_height="@dimen/apple_icon_size"-->
+<!--                        app:layout_constraintEnd_toStartOf="@+id/movie_title"-->
+<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                        app:layout_constraintTop_toTopOf="parent"-->
+<!--                        android:layout_marginEnd="@dimen/apple_icon_right_margin"/>-->
 
                 <TextView
                         android:layout_margin="@dimen/common_margin"

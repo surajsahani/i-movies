@@ -13,9 +13,6 @@ import com.martialcoder.itunesmovies.R
 import com.martialcoder.itunesmovies.databinding.FragmentHomeBinding
 import com.martialcoder.itunesmovies.ui.MainActivity
 
-/**
- * A Fragment that shows recently viewed movies and searched movies.
- */
 class HomeFragment : Fragment() {
 
 
@@ -52,7 +49,7 @@ class HomeFragment : Fragment() {
         }
 
         viewModel.search("star")
-        viewModel.watchedMovies.observe(this, Observer {
+        viewModel.watchedMovies.observe(viewLifecycleOwner, Observer {
             if (it.isEmpty()) {
                 binder.recentLabel.visibility = View.GONE
                 binder.watchedMovies.visibility = View.GONE
@@ -63,7 +60,7 @@ class HomeFragment : Fragment() {
 
             watchedMoviesAdapter.movies = it
         })
-        viewModel.searchedMovies.observe(this, Observer {
+        viewModel.searchedMovies.observe(viewLifecycleOwner, Observer {
             viewModel.setCount(it.size)
             searchedMoviesAdapter.submitList(it)
         })
