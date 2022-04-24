@@ -71,5 +71,5 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
 
     //Roboto Theme
-    implementation "com.rhexgomez.typer:typer-roboto:2.0.0"
+    //implementation "com.rhexgomez.typer:typer-roboto:2.0.0"
 }
