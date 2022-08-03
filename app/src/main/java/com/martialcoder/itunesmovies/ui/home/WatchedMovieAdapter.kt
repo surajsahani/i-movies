@@ -5,8 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.martialcoder.itunesmovies.databinding.ItemWatchedMovieBinding
 import com.martialcoder.itunesmovies.source.cache.MovieEntity
-import com.martialcoder.itunesmovies.ui.home.HomeViewModel
-import com.martialcoder.itunesmovies.ui.home.WatchResultViewHolder
 import com.squareup.picasso.Picasso
 
 /**

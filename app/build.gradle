@@ -73,9 +73,4 @@ dependencies {
     //Roboto Theme
     //implementation "com.rhexgomez.typer:typer-roboto:2.0.0"
 
-    // Requestly Debugger
-    debugImplementation "io.requestly:requestly-android:2.0.0"
-    releaseImplementation "io.requestly:requestly-android-noop:2.0.0"
-    debugImplementation "io.requestly:requestly-android-okhttp:2.0.0"
-    releaseImplementation "io.requestly:requestly-android-okhttp-noop:2.0.0"
 }

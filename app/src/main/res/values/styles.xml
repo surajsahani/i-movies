@@ -7,5 +7,4 @@
         <item name="colorPrimaryDark">@color/default_background</item>
         <item name="colorAccent">@color/default_background</item>
     </style>
-
 </resources>

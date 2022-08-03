@@ -24,7 +24,7 @@ class HomeViewModel : ViewModel() {
     val watchedMovies = repository.getWatchHistory()
     val viewedMovie = Transformations.switchMap(selectedMovie) { repository.getMovie(it) }
 
-    private val _openFragment = SingleLiveEvent<Void>()
+    private val _openFragment = SingleLiveEvent<Void>() // not getting what it does
     val openFragment: LiveData<Void>
         get() {
             return _openFragment

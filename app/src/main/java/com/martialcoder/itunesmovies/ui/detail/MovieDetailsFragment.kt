@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import com.martialcoder.itunesmovies.R
 import com.martialcoder.itunesmovies.databinding.FragmentMovieDetailsBinding
 import com.martialcoder.itunesmovies.ui.MainActivity
@@ -28,7 +27,7 @@ class MovieDetailsFragment : Fragment() {
         /**
          * Add a 60% gap in between our price tag and movie description!
          */
-        val mHeight = activity!!.windowManager.defaultDisplay.height
+        val mHeight = requireActivity().windowManager.defaultDisplay.height
         binder.verticalSpan.layoutParams.height = (mHeight * 0.6).toInt()
 
         return binder.root
@@ -38,7 +37,7 @@ class MovieDetailsFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         val activity = activity as MainActivity
         val viewModel = activity.homeViewModel
-        viewModel.viewedMovie.observe(this, Observer { entity ->
+        viewModel.viewedMovie.observe(viewLifecycleOwner) { entity ->
             if (entity != null) {
                 binder.apply {
                     movieTitle.text = entity.name
@@ -63,7 +62,7 @@ class MovieDetailsFragment : Fragment() {
                     movieTitle.paint
                 }
             }
-        })
+        }
     }
 
 }

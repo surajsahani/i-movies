@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.transaction
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.martialcoder.itunesmovies.R
 import com.martialcoder.itunesmovies.databinding.ActivityMainBinding
@@ -23,9 +22,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binder = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        homeViewModel.openFragment.observe(this, Observer {
+        homeViewModel.openFragment.observe(this) {
             supportFragmentManager.transaction {
-
                 /**
                  * Using add rather than replace lets the HomeViewModel::watchedMovies
                  * forces an update trigger!
@@ -33,7 +31,7 @@ class MainActivity : AppCompatActivity() {
                 add(R.id.container, MovieDetailsFragment())
                 addToBackStack(null)
             }
-        })
+        }
     }
 
 }
