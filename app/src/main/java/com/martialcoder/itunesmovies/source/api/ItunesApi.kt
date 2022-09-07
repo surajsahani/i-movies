@@ -14,14 +14,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 object ItunesApi {
 
 
-
-
-    val collector = RQCollector(globalContext)
-    val rqInterceptor = RQInterceptor.Builder(globalContext).collector(collector).build()
+//    val collector = RQCollector(globalContext)
+//    val rqInterceptor = RQInterceptor.Builder(globalContext).collector(collector).build()
     //val mclient = OkHttpClient.Builder().addInterceptor(rqInterceptor).build()
 
     private val client = OkHttpClient.Builder()
-        .addInterceptor(rqInterceptor)
         .build()
 
 
