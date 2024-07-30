@@ -1,9 +1,6 @@
 package com.martialcoder.itunesmovies.source.api
 
-import android.content.Context
-import com.martialcoder.itunesmovies.AppApplication.Companion.globalContext
-import io.requestly.android.okhttp.api.RQCollector
-import io.requestly.android.okhttp.api.RQInterceptor
+
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -13,14 +10,8 @@ import retrofit2.converter.gson.GsonConverterFactory
  */
 object ItunesApi {
 
-
-//    val collector = RQCollector(globalContext)
-//    val rqInterceptor = RQInterceptor.Builder(globalContext).collector(collector).build()
-    //val mclient = OkHttpClient.Builder().addInterceptor(rqInterceptor).build()
-
     private val client = OkHttpClient.Builder()
         .build()
-
 
 
     /**
@@ -34,8 +25,6 @@ object ItunesApi {
         .addConverterFactory(GsonConverterFactory.create())
         .client(client)
         .build().create(ItunesApiService::class.java)!!
-
-
 
 
 }

@@ -29,7 +29,7 @@ class MovieRepository {
     fun getMovies(keyword: String, itemCount: Int = 50): BoundaryBundle<MovieEntity> {
         val movieBoundary = MovieBoundary(keyword, api, db, itemCount)
         val movieFactory = db.movieDao().getMoviesByKeyword(keyword)
-        val pageList = LivePagedListBuilder<Int, MovieEntity>(movieFactory, itemCount).apply {
+        val pageList = LivePagedListBuilder(movieFactory, itemCount).apply {
             setBoundaryCallback(movieBoundary)
         }.build()
         return BoundaryBundle(pageList, movieBoundary.itemCountSignal)
